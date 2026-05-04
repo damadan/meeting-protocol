@@ -1,0 +1,31 @@
+# ── Большие файлы моделей ───────────────────
+models/
+DiariZen/
+
+# ── Python-окружение ─────────────────────────
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# ── Выходные файлы пайплайна ─────────────────
+protocol_fluid.*
+protocol.*
+diarization_full.json
+*.srt
+*.json
+
+# ── Системное ────────────────────────────────
+.DS_Store
+.env
+*.log
+
+# ── IDE ──────────────────────────────────────
+.claude/
+.idea/
+.vscode/

@@ -1,0 +1,15 @@
+# ─── Основные ───────────────────────────────
+streamlit>=1.30.0
+torch>=2.1.0
+torchaudio>=2.1.0
+soundfile
+
+# ─── ASR: ONNX Runtime ─────────────────────
+onnx-asr
+
+# ─── Диаризация: DiariZen ──────────────────
+# Устанавливается отдельно из репозитория:
+#   git clone https://github.com/BUTSpeechFIT/DiariZen.git
+#   cd DiariZen
+#   pip install -r requirements.txt && pip install -e .
+#   cd pyannote-audio && pip install -e . && cd ..
