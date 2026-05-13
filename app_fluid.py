@@ -7,6 +7,8 @@ ASR:         FluidAudio Parakeet TDT (CoreML → ANE/GPU)
 RTFx:        ~150–300× real-time (57 мин за 23 сек)
 """
 
+from __future__ import annotations
+
 import gc
 import json
 import os
