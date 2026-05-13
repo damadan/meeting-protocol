@@ -30,13 +30,19 @@ FluidAudio использует **CoreML** — фреймворк Apple для �
 | Процессор | Apple Silicon (M1/M2/M3/M4) |
 | Xcode Command Line Tools | 15+ |
 | Swift | 6.0+ |
-| Python | 3.10+ |
+| Python | 3.9+ |
 | ffmpeg | любая актуальная |
 | Свободного места | ~3 ГБ (модели загружаются автоматически) |
 
 ---
 
 ## 🚀 Установка
+
+### Актуальная ветка
+
+Пока изменения не слиты в `main`, используйте ветку `codex/fix-python39-fluid-app`.
+В ней исправлен запуск `app_fluid.py` на Python 3.9 и сохранён FluidAudio-пайплайн
+для транскрибации и диаризации через CoreML на Apple Silicon.
 
 ### 1. Установите системные зависимости
 
@@ -54,7 +60,7 @@ brew install python@3.11
 ### 2. Клонируйте этот репозиторий
 
 ```bash
-git clone https://github.com/damadan/meeting-protocol.git
+git clone --branch codex/fix-python39-fluid-app --single-branch https://github.com/damadan/meeting-protocol.git
 cd meeting-protocol
 ```
 
@@ -298,6 +304,10 @@ xcode-select --install      # Установить CLT
 xcode-select -p             # Проверить путь
 swift --version             # Должно быть 6.0+
 ```
+
+**Ошибка `TypeError: unsupported operand type(s) for |: 'type' and 'NoneType'`:**  
+Обновите репозиторий до актуальной версии. Эта ошибка возникала в Python 3.9 из-за
+ранней оценки type hints в `app_fluid.py`.
 
 **Streamlit не запускается:**
 ```bash
